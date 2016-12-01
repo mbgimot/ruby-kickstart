@@ -1,5 +1,5 @@
 # Prompt the user for a number, then read it in and print out "hi" that many times
-# 
+#
 # Repeat this process until the user submits "bye", then say "goodbye" and end the program
 # HINT: Check out example 2 if you get stuck
 
@@ -20,12 +20,20 @@
 
 def hi_hi_goodbye
   # your code here
+  prompt = "Enter a number"
+  while number = gets
+    hello = ["hi"] * number.to_i * ' '
+    puts hello
+    prompt = "Enter a number"
+    break if number.chomp == "bye"
+  end
+  puts "Goodbye!"
 end
 
 
 
 
 # This will just invoke the method if you run this program directly
-# This way you can try it out by running "$ ruby 2_input_output_control.rb" 
+# This way you can try it out by running "$ ruby 2_input_output_control.rb"
 # but it will still work for our tests
 hi_hi_goodbye if $0 == __FILE__
